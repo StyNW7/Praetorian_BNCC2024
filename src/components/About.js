@@ -1,55 +1,50 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Footer from './Footer';
 
 const About = () => {
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-4xl font-bold mb-4">Tentang WorldUniversity</h1>
+    <div className="container mx-auto p-4 text-center">
+      <h1 className="text-4xl font-bold mb-8 text-blue-600">About WorldUniversity</h1>
       
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-2">Deskripsi Platform</h2>
-        <p className="text-lg">
-          WorldUniversity adalah platform inovatif yang dikembangkan oleh PT World University untuk membantu mahasiswa mendapatkan informasi mendalam tentang berbagai negara di seluruh dunia. Dengan antarmuka yang ramah pengguna, kami menyediakan data lengkap tentang negara, termasuk bendera, lokasi, dan berbagai informasi penting lainnya.
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold mb-4 text-blue-500">Platform Description</h2>
+        <p className="text-lg leading-relaxed text-gray-700">
+          WorldUniversity is an innovative platform developed by PT World University to help students gain in-depth information about various countries worldwide. With a user-friendly interface, we provide comprehensive data on countries, including flags, locations, and other essential information.
         </p>
       </section>
 
-      <section className="mb-8">
-        <h2 className="text-3xl font-semibold mb-2">Visi dan Misi</h2>
-        <div className="mb-4">
-          <h3 className="text-2xl font-bold">Visi</h3>
-          <p className="text-lg">
-            Menjadi platform global terdepan yang memfasilitasi pendidikan dan pengetahuan tentang negara-negara di dunia, mempermudah akses informasi dan meningkatkan kesadaran global di kalangan mahasiswa.
+      <section className="mb-12">
+        <h2 className="text-3xl font-semibold mb-4 text-blue-500">Vision and Mission</h2>
+        <div className="mb-6">
+          <h3 className="text-2xl font-bold text-blue-400">Vision</h3>
+          <p className="text-lg leading-relaxed text-gray-700">
+            To become the leading global platform that facilitates education and knowledge about countries worldwide, simplifying information access and enhancing global awareness among students.
           </p>
         </div>
         <div>
-          <h3 className="text-2xl font-bold">Misi</h3>
-          <p className="text-lg">
-            1. Menyediakan data negara yang akurat dan terkini. <br />
-            2. Meningkatkan pemahaman global mahasiswa melalui informasi yang mudah diakses. <br />
-            3. Mendorong eksplorasi dan penelitian tentang berbagai negara dan budaya.
+          <h3 className="text-2xl font-bold text-blue-400">Mission</h3>
+          <p className="text-lg leading-relaxed text-gray-700">
+            1. Provide accurate and up-to-date country data. <br />
+            2. Enhance global understanding among students through easily accessible information. <br />
+            3. Encourage exploration and research on various countries and cultures.
           </p>
         </div>
       </section>
 
       <section>
-        <h2 className="text-3xl font-semibold mb-2">Tim Kami</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <div className="border border-gray-300 rounded-lg p-4 shadow-lg">
-            <img src="https://via.placeholder.com/150" alt="Anggota Tim 1" className="w-32 h-32 object-cover rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-center">Nama Anggota 1</h3>
-            <p className="text-center text-gray-600">Deskripsi singkat tentang peran dan kontribusi anggota tim ini dalam pengembangan platform.</p>
-          </div>
-          <div className="border border-gray-300 rounded-lg p-4 shadow-lg">
-            <img src="https://via.placeholder.com/150" alt="Anggota Tim 2" className="w-32 h-32 object-cover rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-center">Nama Anggota 2</h3>
-            <p className="text-center text-gray-600">Deskripsi singkat tentang peran dan kontribusi anggota tim ini dalam pengembangan platform.</p>
-          </div>
-          <div className="border border-gray-300 rounded-lg p-4 shadow-lg">
-            <img src="https://via.placeholder.com/150" alt="Anggota Tim 3" className="w-32 h-32 object-cover rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold text-center">Nama Anggota 3</h3>
-            <p className="text-center text-gray-600">Deskripsi singkat tentang peran dan kontribusi anggota tim ini dalam pengembangan platform.</p>
+        <h2 className="text-3xl font-semibold mb-6 text-blue-500">Our Team</h2>
+        <div className="flex justify-center gap-10">
+          <div className="border border-gray-300 rounded-lg p-6 shadow-lg bg-white">
+            <img src="assets/PP (1).png" alt="Team Member 1" className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-blue-500" />
+            <h3 className="text-xl font-bold text-blue-600 mb-2">Stanley Nathanael Wijaya</h3>
+            <Link to={`https://bento.me/snw77`} target='blank' className="text-blue-500 hover:underline">Portfolio</Link>
           </div>
         </div>
       </section>
+
+    <Footer />
+
     </div>
   );
 };

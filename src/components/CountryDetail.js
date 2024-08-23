@@ -17,11 +17,11 @@ const CountryDetail = () => {
 
   if (!country) return <LoadingSkeleton />;
 
-//   if (loading) {
-//     return <LoadingSkeleton />;
-//   }
-
   const { googleMaps, openStreetMaps } = country.maps || {};
+
+  // Harus ganti YOUR_API_KEY menjadi API Key asli (namun saya tidak menampilkan API Key saya (Safety))
+
+  const googleMapsEmbedUrl = googleMaps ? `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(country.name.common)}` : null;
 
   return (
     <div className="container mx-auto p-4">
@@ -35,9 +35,9 @@ const CountryDetail = () => {
       
       <div className="mt-4">
         <h2 className="text-2xl font-semibold mb-2">Peta Lokasi</h2>
-        {googleMaps ? (
+        {googleMapsEmbedUrl ? (
           <iframe
-            src={googleMaps}
+            src={googleMapsEmbedUrl}
             width="100%"
             height="400"
             style={{ border: 0 }}

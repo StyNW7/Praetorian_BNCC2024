@@ -1,20 +1,43 @@
-// src/components/CountryFilter.js
 import React, { useState, useEffect } from 'react';
-import { useCountry } from '../contexts/CountryContext';
 import { Link } from 'react-router-dom';
+import { useCountry } from '../contexts/CountryContext';
 import LoadingSkeleton from './LoadingSkeleton';
+import Footer from './Footer';
 
 const CountryFilter = () => {
-  const { countries, loading } = useCountry();
+  const { countries, loading } = useCountry(); // Menggunakan context API
+  const [regions, setRegions] = useState([]);
+  const [languages, setLanguages] = useState([]);
+  const [independenceStatuses, setIndependenceStatuses] = useState(['All Status', 'Not Independent', 'Independent']);
   const [region, setRegion] = useState('All');
   const [language, setLanguage] = useState('All');
-  const [independent, setIndependent] = useState('All');
+  const [independent, setIndependent] = useState('All Status');
   const [filteredCountries, setFilteredCountries] = useState([]);
 
   useEffect(() => {
     if (loading) return;
-    
-    // Filter countries based on selected criteria
+
+    // Extract unique regions
+    const uniqueRegions = [...new Set(countries.map(country => country.region))].filter(Boolean);
+    setRegions(['All', ...uniqueRegions]);
+
+    // Extract unique languages
+    const uniqueLanguages = [
+      ...new Set(
+        countries.flatMap(country => Object.values(country.languages || {}))
+      )
+    ].filter(Boolean);
+    setLanguages(['All', ...uniqueLanguages]);
+
+    // Extract unique independence statuses
+    const uniqueIndependenceStatuses = ['Not Independent', 'Independent'];
+    setIndependenceStatuses(['All Status', ...uniqueIndependenceStatuses]);
+
+  }, [countries, loading]);
+
+  useEffect(() => {
+    if (loading) return;
+
     let filtered = countries;
     if (region !== 'All') {
       filtered = filtered.filter(country => country.region === region);
@@ -22,8 +45,8 @@ const CountryFilter = () => {
     if (language !== 'All') {
       filtered = filtered.filter(country => Object.values(country.languages || {}).includes(language));
     }
-    if (independent !== 'All') {
-      filtered = filtered.filter(country => (independent === 'Yes' ? country.independent : !country.independent));
+    if (independent !== 'All Status') {
+      filtered = filtered.filter(country => (independent === 'Independent' ? country.independent : !country.independent));
     }
     setFilteredCountries(filtered);
   }, [region, language, independent, countries, loading]);
@@ -41,12 +64,9 @@ const CountryFilter = () => {
             onChange={(e) => setRegion(e.target.value)}
             className="p-2 border border-gray-300 rounded"
           >
-            <option value="All">All Regions</option>
-            <option value="Africa">Africa</option>
-            <option value="America">America</option>
-            <option value="Asia">Asia</option>
-            <option value="Europe">Europe</option>
-            <option value="Oceania">Oceania</option>
+            {regions.map((reg, index) => (
+              <option key={index} value={reg}>{reg}</option>
+            ))}
           </select>
 
           <select
@@ -54,12 +74,9 @@ const CountryFilter = () => {
             onChange={(e) => setLanguage(e.target.value)}
             className="p-2 border border-gray-300 rounded ml-4"
           >
-            <option value="All">All Languages</option>
-            {/* Daftar bahasa bisa diambil dari data yang lebih rinci */}
-            <option value="English">English</option>
-            <option value="French">French</option>
-            <option value="Spanish">Spanish</option>
-            {/* Tambahkan lebih banyak bahasa sesuai kebutuhan */}
+            {languages.map((lang, index) => (
+              <option key={index} value={lang}>{lang}</option>
+            ))}
           </select>
           
           <select
@@ -67,9 +84,9 @@ const CountryFilter = () => {
             onChange={(e) => setIndependent(e.target.value)}
             className="p-2 border border-gray-300 rounded ml-4"
           >
-            <option value="All">All Status</option>
-            <option value="Yes">Independent</option>
-            <option value="No">Not Independent</option>
+            {independenceStatuses.map((status, index) => (
+              <option key={index} value={status}>{status}</option>
+            ))}
           </select>
         </div>
       </div>
@@ -80,15 +97,16 @@ const CountryFilter = () => {
             <img src={country.flags.png} alt={`${country.name.common} flag`} className="w-full h-32 object-cover" />
             <div className="p-4">
               <h2 className="text-2xl font-bold">{country.name.common}</h2>
-              <p><strong>Benua:</strong> {country.region}</p>
-              <p><strong>Bahasa:</strong> {Object.values(country.languages || {}).join(', ')}</p>
-              <p><strong>Populasi:</strong> {country.population.toLocaleString()}</p>
-              <p><strong>Luas Wilayah:</strong> {country.area.toLocaleString()} km²</p>
+              <p><strong>Region:</strong> {country.region}</p>
+              <p><strong>Language:</strong> {Object.values(country.languages || {}).join(', ')}</p>
+              <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
+              <p><strong>Area:</strong> {country.area.toLocaleString()} km²</p>
               <Link to={`/country/${country.name.common}`} className="text-blue-500 hover:underline">View Details</Link>
             </div>
           </div>
         ))}
       </div>
+      <Footer/>
     </div>
   );
 };

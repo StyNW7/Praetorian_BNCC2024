@@ -1,8 +1,8 @@
-// src/components/CountrySearch.js
 import React, { useState } from 'react';
 import { useCountry } from '../contexts/CountryContext';
 import { Link } from 'react-router-dom';
 import LoadingSkeleton from './LoadingSkeleton';
+import Footer from '../components/Footer';
 
 const CountrySearch = () => {
   const { countries, loading } = useCountry();
@@ -17,7 +17,9 @@ const CountrySearch = () => {
   );
 
   return (
+
     <div className="container mx-auto p-4">
+
       <input
         type="text"
         placeholder="Search countries..."
@@ -25,6 +27,7 @@ const CountrySearch = () => {
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredCountries.map(country => (
           <div key={country.cca3} className="border border-gray-300 rounded-lg overflow-hidden shadow-lg">
@@ -40,6 +43,9 @@ const CountrySearch = () => {
           </div>
         ))}
       </div>
+
+      <Footer />
+
     </div>
   );
 };
