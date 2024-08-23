@@ -17,7 +17,7 @@ const Navbar = () => {
 
         {/* Menu Toggle untuk mobile */}
         <div className="md:hidden">
-          <button onClick={toggleMenu} className="text-2xl">
+          <button onClick={toggleMenu} className="text-2xl z-50 relative">
             {isOpen ? <HiX /> : <HiMenu />}
           </button>
         </div>
@@ -33,7 +33,7 @@ const Navbar = () => {
 
       {/* Sidebar yang muncul saat toggle di mobile */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 bg-blue-600 bg-opacity-95 z-40 flex flex-col items-center space-y-6 py-6">
+        <div className="md:hidden fixed inset-0 bg-blue-600 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6 py-6">
           <Link to="/" onClick={toggleMenu} className="text-xl hover:bg-blue-700 rounded px-4 py-2 w-full text-center">Home</Link>
           <Link to="/search" onClick={toggleMenu} className="text-xl hover:bg-blue-700 rounded px-4 py-2 w-full text-center">Country Search</Link>
           <Link to="/filter" onClick={toggleMenu} className="text-xl hover:bg-blue-700 rounded px-4 py-2 w-full text-center">Country Filter</Link>

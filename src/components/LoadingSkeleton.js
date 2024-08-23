@@ -1,4 +1,5 @@
-// src/components/LoadingSkeleton.js
+// Loading Skeleton berhasil --> hanya saja jarang terlihat (harus cukup teliti), karena fetching data yang tejradi begitu cepat
+
 import React from 'react';
 
 const LoadingSkeleton = () => {

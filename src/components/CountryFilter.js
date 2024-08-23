@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCountry } from '../contexts/CountryContext';
 import LoadingSkeleton from './LoadingSkeleton';
-import Footer from './Footer';
 
 const CountryFilter = () => {
   const { countries, loading } = useCountry(); // Menggunakan context API
@@ -106,7 +105,6 @@ const CountryFilter = () => {
           </div>
         ))}
       </div>
-      <Footer/>
     </div>
   );
 };

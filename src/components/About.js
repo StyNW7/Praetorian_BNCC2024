@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Footer from './Footer';
 
 const About = () => {
   return (
@@ -33,7 +32,7 @@ const About = () => {
       </section>
 
       <section>
-        <h2 className="text-3xl font-semibold mb-6 text-blue-500">Our Team</h2>
+        <h2 className="text-3xl font-semibold mb-6 text-blue-500">Developer</h2>
         <div className="flex justify-center gap-10">
           <div className="border border-gray-300 rounded-lg p-6 shadow-lg bg-white">
             <img src="assets/PP (1).png" alt="Team Member 1" className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-blue-500" />
@@ -42,8 +41,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-    <Footer />
 
     </div>
   );

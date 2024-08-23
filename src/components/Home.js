@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useCountry } from '../contexts/CountryContext';
-import Footer from '../components/Footer';
 
 const Home = () => {
   const { countries, setCountries } = useCountry();
@@ -49,12 +48,12 @@ const Home = () => {
           </div>
           <div className="border rounded-lg p-6 shadow-lg w-full max-w-xs">
             <h3 className="text-xl font-bold mb-2">Filter Country</h3>
-            <p>Filter countries by continent, language, or independence status.</p>
+            <p>Filter countries by continent, language, or independence status. Easy to use!</p>
             <Link to={`/filter`} className="text-blue-500 hover:underline">View Details</Link>
           </div>
           <div className="border rounded-lg p-6 shadow-lg w-full max-w-xs">
             <h3 className="text-xl font-bold mb-2">Worldwide Information</h3>
-            <p>Our website is always up to date!</p>
+            <p>Our website is always up to date! You can find everything about country here!</p>
             <Link to={`/about`} className="text-blue-500 hover:underline">View Details</Link>
           </div>
         </div>
@@ -74,10 +73,6 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-      {/* Footer */}
-
-      <Footer />
       
     </div>
   );

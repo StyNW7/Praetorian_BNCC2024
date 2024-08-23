@@ -4,8 +4,9 @@ import Home from './components/Home';
 import CountrySearch from './components/CountrySearch';
 import CountryDetail from './components/CountryDetail';
 import CountryFilter from './components/CountryFilter';
-import About from './components/About'; // Pastikan About diimpor
-import Navbar from './components/Navbar'; // Pastikan Navbar diimpor
+import About from './components/About';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/filter" element={<CountryFilter />} />
         <Route path="/about" element={<About />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }

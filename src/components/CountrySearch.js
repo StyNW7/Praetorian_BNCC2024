@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useCountry } from '../contexts/CountryContext';
 import { Link } from 'react-router-dom';
 import LoadingSkeleton from './LoadingSkeleton';
-import Footer from '../components/Footer';
 
 const CountrySearch = () => {
   const { countries, loading } = useCountry();
@@ -43,8 +42,6 @@ const CountrySearch = () => {
           </div>
         ))}
       </div>
-
-      <Footer />
 
     </div>
   );

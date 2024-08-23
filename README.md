@@ -1,70 +1,137 @@
-# Getting Started with Create React App
+# WorldUniversity - Front End Praetorian BNCC 2024
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository created for a selection as Praetorian in Front End Development by Bina Nusantara Computer Club (BNCC) 2024 🔥🔥
 
-## Available Scripts
+## Table of Contents
+1. [Project Overview](https://github.com/StyNW7/Praetorian_BNCC2024#Project-Overview)
+2. [Prerequisite](https://github.com/StyNW7/Praetorian_BNCC2024#Prerequisite)
+3. [How to Use Website](https://github.com/StyNW7/Praetorian_BNCC2024#How-to-Use-Website)
+4. [Website Information](https://github.com/StyNW7/Praetorian_BNCC2024#Website-Information)
+5. [Owner](https://github.com/StyNW7/Praetorian_BNCC2024#Owner)
 
-In the project directory, you can run:
+## Project Overview
 
-### `npm start`
+### Website Name
+WorldUniversity
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Explanation
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+WorldUniversity is a new platform developed
+by PT World University to help students get
+detailed information about various countries around the world. this platform
+provides various features such as country data search, flag, location, as well as
+filter country data based on certain criteria. This platform is designed
+to provide an easy and informative experience for users
+user.
 
-### `npm test`
+### Technology and Infrastructure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Front-end Development (Based on the guidelines)
 
-### `npm run build`
+Details:
+- Front-end: React Js, Tailwind CSS, Axios, and React-Router
+- API: https://restcountries.com
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prerequisite
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before running this project on a local server, make sure you have met the following requirements:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Node.js and npm:**
+   - Make sure you have [Node.js](https://nodejs.org/) installed on your system. Node.js includes npm (Node Package Manager), which will be used to install the project's dependencies.
+   - To check if Node.js and npm are installed, run the following command in your terminal:
 
-### `npm run eject`
+     ```bash
+     nodes -v
+     npm -v
+     ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   - If you see the Node.js and npm versions displayed, you are ready to continue.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Git:**
+   - This project uses Git for version control. Make sure you have Git installed. You can download it from [here](https://git-scm.com/).
+   - To check if Git is installed, run the following command:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+     ```bash
+     git --version
+     ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - If the Git version is displayed, you are ready to continue.
 
-## Learn More
+## How to Run Website
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### *This website is not deployed*
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Therefore, this is the guidelines to use the website
 
-### Code Splitting
+1. **Clone Repository:**
+   - Clone this project repository to your local machine using the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+     ```bash
+     git clone https://github.com/StyNW7/Praetorian_BNCC2024.git
+     ```
 
-### Analyzing the Bundle Size
+2. **Install Dependencies:**
+   - After the repository has been successfully cloned, go to the project directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+     ```bash
+     cd project
+     ```
 
-### Making a Progressive Web App
+     Make sure you are already in the project folder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+   - Install all required dependencies using npm:
 
-### Advanced Configuration
+     ```bash
+     npm install
+     ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   - This will download all the packages required to run the project.
 
-### Deployment
+3. **Run Development Server:**
+   - Once all dependencies are installed, you can start the development server with the following command:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+     ```bash
+     npm start
+     ```
 
-### `npm run build` fails to minify
+   - This command will run the application on the development server, usually at `http://localhost:3000/`. You can open this URL in a browser to see the application running.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+<!-- Other Guide -->
+
+## Website Information
+
+### Home Page
+
+This page is just a simple landing page that tell the User about what the Website is about, Website's features, and Popular Countries.
+
+### Country Search
+
+This is our first feature, which is only about searching page to search country and view the details.
+
+### Country Filter
+
+This is our second feature, which is only about filtering page to filter country and view the details.
+
+### Country Detail
+
+This is our third or last feature, which is to see the detail information about the Country.
+
+### About Page
+
+This is just like a normal and very static About Page which tell the User about the Website, Vision and Mission, and also who is the Developer.
+
+### Bonus
+
+There is a bonus score based on the guidelines which is to use Context API and make a loading Skeleton using Tailwind CSS.
+
+##### Hopefully this documentation and the guide useful and helpful to learn and use the website!
+
+<!-- Owner -->
+
+## Owner
+
+This Repository is created by:
+- Stanley Nathanael Wijaya
+
+<code> Soli Deo Gloria ✨✨ </code>
