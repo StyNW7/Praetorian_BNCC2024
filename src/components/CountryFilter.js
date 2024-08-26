@@ -71,7 +71,7 @@ const CountryFilter = () => {
           <select
             value={language}
             onChange={(e) => setLanguage(e.target.value)}
-            className="p-2 border border-gray-300 rounded ml-4"
+            className="p-2 border border-gray-300 rounded ml-0 sm:ml-4"
           >
             {languages.map((lang, index) => (
               <option key={index} value={lang}>{lang}</option>
@@ -81,7 +81,7 @@ const CountryFilter = () => {
           <select
             value={independent}
             onChange={(e) => setIndependent(e.target.value)}
-            className="p-2 border border-gray-300 rounded ml-4"
+            className="p-2 border border-gray-300 rounded ml-0 sm:ml-4"
           >
             {independenceStatuses.map((status, index) => (
               <option key={index} value={status}>{status}</option>
@@ -99,7 +99,7 @@ const CountryFilter = () => {
               <p><strong>Region:</strong> {country.region}</p>
               <p><strong>Language:</strong> {Object.values(country.languages || {}).join(', ')}</p>
               <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
-              <p><strong>Area:</strong> {country.area.toLocaleString()} km²</p>
+              <p><strong>Country Area:</strong> {country.area.toLocaleString()} km²</p>
               <Link to={`/country/${country.name.common}`} className="text-blue-500 hover:underline">View Details</Link>
             </div>
           </div>

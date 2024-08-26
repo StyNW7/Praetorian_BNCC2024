@@ -33,10 +33,10 @@ const CountrySearch = () => {
             <img src={country.flags.png} alt={`${country.name.common} flag`} className="w-full h-32 object-cover" />
             <div className="p-4">
               <h2 className="text-2xl font-bold">{country.name.common}</h2>
-              <p><strong>Benua:</strong> {country.region}</p>
-              <p><strong>Bahasa:</strong> {Object.values(country.languages || {}).join(', ')}</p>
-              <p><strong>Populasi:</strong> {country.population.toLocaleString()}</p>
-              <p><strong>Luas Wilayah:</strong> {country.area.toLocaleString()} km²</p>
+              <p><strong>Region:</strong> {country.region}</p>
+              <p><strong>Language:</strong> {Object.values(country.languages || {}).join(', ')}</p>
+              <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
+              <p><strong>Country Area:</strong> {country.area.toLocaleString()} km²</p>
               <Link to={`/country/${country.name.common}`} className="text-blue-500 hover:underline">View Details</Link>
             </div>
           </div>
