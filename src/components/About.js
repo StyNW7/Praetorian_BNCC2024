@@ -37,7 +37,7 @@ const About = () => {
         <h2 className="text-3xl font-semibold mb-6 text-blue-500">Developer</h2>
         <div className="flex justify-center gap-10">
           <div className="border border-gray-300 rounded-lg p-6 shadow-lg bg-white">
-            <img src="assets/PP (1).png" alt="Team Member 1" className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-blue-500" />
+            <img src={`${process.env.PUBLIC_URL}/assets/PP (1).png`} alt="Team Member 1" className="w-32 h-32 object-cover rounded-full mx-auto mb-4 border-4 border-blue-500" />
             <h3 className="text-xl font-bold text-blue-600 mb-2">Stanley Nathanael Wijaya</h3>
             <Link to={`https://bento.me/snw77`} target='blank' className="text-blue-500 hover:underline">Portfolio</Link>
           </div>

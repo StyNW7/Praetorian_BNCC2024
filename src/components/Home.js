@@ -15,7 +15,7 @@ const Home = () => {
 
       <div 
         className="relative flex flex-col justify-center items-center min-h-screen bg-cover bg-center mb-10 w-full" 
-        style={{ backgroundImage: `url(assets/backgroundFlag.jpg)` }}
+        style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/assets/backgroundFlag.jpg)` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <h1 className="relative text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 text-center w-full">

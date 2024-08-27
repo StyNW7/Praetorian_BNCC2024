@@ -61,7 +61,7 @@ Before running this project on a local server, make sure you have met the follow
 
 #### Website already deployed (not 100% success, because I only deploy using GitHub Pages): https://stynw7.github.io/Praetorian_BNCC2024/
 
-Therefore, this is the guidelines to use the website
+However, this is the guidelines to use the website locally
 
 1. **Clone Repository:**
    - Clone this project repository to your local machine using the following command:
