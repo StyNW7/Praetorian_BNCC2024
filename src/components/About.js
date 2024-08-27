@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
-    <div className="container mx-auto p-4 text-center">
+
+    <div className="container mx-auto p-4 text-center pb-20">
+
       <h1 className="text-4xl font-bold mb-8 text-blue-600">About WorldUniversity</h1>
       
       <section className="mb-12">
@@ -43,6 +45,7 @@ const About = () => {
       </section>
 
     </div>
+    
   );
 };
 

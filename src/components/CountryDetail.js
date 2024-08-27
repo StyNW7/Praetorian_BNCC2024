@@ -1,40 +1,41 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+import { useCountry } from '../contexts/CountryContext';
 import LoadingSkeleton from './LoadingSkeleton';
 
 const CountryDetail = () => {
   const { name } = useParams();
-  const [country, setCountry] = useState(null);
+  const { countries, loading } = useCountry();
 
-  useEffect(() => {
-    axios.get(`https://restcountries.com/v3.1/name/${name}`)
-      .then(response => {
-        setCountry(response.data[0]);
-      })
-      .catch(error => console.log(error));
-  }, [name]);
+  if (loading) return <LoadingSkeleton />;
 
-  if (!country) return <LoadingSkeleton />;
+  const country = countries.find(
+    country => country.name.common.toLowerCase() === name.toLowerCase()
+  );
+
+  if (!country) return <p>Country not found</p>;
 
   const { googleMaps, openStreetMaps } = country.maps || {};
 
   // Harus ganti YOUR_API_KEY menjadi API Key asli (namun saya tidak menampilkan API Key saya (Safety))
 
-  const googleMapsEmbedUrl = googleMaps ? `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(country.name.common)}` : null;
+  const googleMapsEmbedUrl = googleMaps
+    ? `https://www.google.com/maps/embed/v1/place?key=YOUR_API_KEY&q=${encodeURIComponent(country.name.common)}`
+    : null;
 
   return (
-    <div className="container mx-auto p-4">
+
+    <div className="container mx-auto p-4 pb-20">
       <h1 className="text-4xl font-bold mb-4">{country.name.common}</h1>
       <img src={country.flags.png} alt={`${country.name.common} flag`} className="w-32 h-20 mb-4" />
-      <p><strong>Ibukota:</strong> {country.capital ? country.capital[0] : 'N/A'}</p>
-      <p><strong>Populasi:</strong> {country.population.toLocaleString()}</p>
-      <p><strong>Luas Wilayah:</strong> {country.area.toLocaleString()} km²</p>
-      <p><strong>Mata Uang:</strong> {Object.values(country.currencies).map(currency => currency.name).join(', ')}</p>
-      <p><strong>Bahasa:</strong> {Object.values(country.languages).join(', ')}</p>
-      
+      <p><strong>Capital:</strong> {country.capital ? country.capital[0] : 'N/A'}</p>
+      <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
+      <p><strong>Country Area:</strong> {country.area.toLocaleString()} km²</p>
+      <p><strong>Currency:</strong> {Object.values(country.currencies).map(currency => currency.name).join(', ')}</p>
+      <p><strong>Language:</strong> {Object.values(country.languages).join(', ')}</p>
+
       <div className="mt-4">
-        <h2 className="text-2xl font-semibold mb-2">Peta Lokasi</h2>
+        <h2 className="text-2xl font-semibold mb-2">Map Location</h2>
         {googleMapsEmbedUrl ? (
           <iframe
             src={googleMapsEmbedUrl}
@@ -43,17 +44,20 @@ const CountryDetail = () => {
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
-            title="Peta Lokasi Google Maps"
+            title="Google Maps"
           ></iframe>
         ) : openStreetMaps ? (
           <a href={openStreetMaps} target="_blank" rel="noopener noreferrer">
-            Lihat Peta di OpenStreetMap
+            See the map at openStreetMaps
           </a>
         ) : (
-          <p>Peta tidak tersedia.</p>
+          <p>There is no such map</p>
         )}
+        
       </div>
+
     </div>
+
   );
 };
 

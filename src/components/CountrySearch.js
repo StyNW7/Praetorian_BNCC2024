@@ -17,7 +17,7 @@ const CountrySearch = () => {
 
   return (
 
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 pb-20">
 
       <input
         type="text"
@@ -44,6 +44,7 @@ const CountrySearch = () => {
       </div>
 
     </div>
+    
   );
 };
 

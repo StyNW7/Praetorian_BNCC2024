@@ -7,10 +7,14 @@ import CountryFilter from './components/CountryFilter';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
+
+// Struktur Template Website
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

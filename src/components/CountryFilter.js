@@ -4,6 +4,7 @@ import { useCountry } from '../contexts/CountryContext';
 import LoadingSkeleton from './LoadingSkeleton';
 
 const CountryFilter = () => {
+  
   const { countries, loading } = useCountry(); // Menggunakan context API
   const [regions, setRegions] = useState([]);
   const [languages, setLanguages] = useState([]);
@@ -16,11 +17,9 @@ const CountryFilter = () => {
   useEffect(() => {
     if (loading) return;
 
-    // Extract unique regions
     const uniqueRegions = [...new Set(countries.map(country => country.region))].filter(Boolean);
     setRegions(['All', ...uniqueRegions]);
 
-    // Extract unique languages
     const uniqueLanguages = [
       ...new Set(
         countries.flatMap(country => Object.values(country.languages || {}))
@@ -28,7 +27,6 @@ const CountryFilter = () => {
     ].filter(Boolean);
     setLanguages(['All', ...uniqueLanguages]);
 
-    // Extract unique independence statuses
     const uniqueIndependenceStatuses = ['Not Independent', 'Independent'];
     setIndependenceStatuses(['All Status', ...uniqueIndependenceStatuses]);
 
@@ -55,7 +53,7 @@ const CountryFilter = () => {
   }
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 pb-20">
       <div className="mb-4">
         <div className="mb-4">
           <select
