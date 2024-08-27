@@ -59,7 +59,7 @@ Before running this project on a local server, make sure you have met the follow
 
 ## How to Run Website
 
-#### *This website is not deployed*
+#### Website already deployed (not 100% success, because I only deploy using GitHub Pages): https://stynw7.github.io/Praetorian_BNCC2024/
 
 Therefore, this is the guidelines to use the website
 
