@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Praetorian_BNCC2024/static/css/main.3a607878.css",
-    "main.js": "/Praetorian_BNCC2024/static/js/main.d8f10677.js",
-    "static/js/453.5e560239.chunk.js": "/Praetorian_BNCC2024/static/js/453.5e560239.chunk.js",
-    "index.html": "/Praetorian_BNCC2024/index.html",
-    "main.3a607878.css.map": "/Praetorian_BNCC2024/static/css/main.3a607878.css.map",
-    "main.d8f10677.js.map": "/Praetorian_BNCC2024/static/js/main.d8f10677.js.map",
-    "453.5e560239.chunk.js.map": "/Praetorian_BNCC2024/static/js/453.5e560239.chunk.js.map"
+    "main.css": "/static/css/main.3a607878.css",
+    "main.js": "/static/js/main.0c553b63.js",
+    "static/js/453.5e560239.chunk.js": "/static/js/453.5e560239.chunk.js",
+    "index.html": "/index.html",
+    "main.3a607878.css.map": "/static/css/main.3a607878.css.map",
+    "main.0c553b63.js.map": "/static/js/main.0c553b63.js.map",
+    "453.5e560239.chunk.js.map": "/static/js/453.5e560239.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3a607878.css",
-    "static/js/main.d8f10677.js"
+    "static/js/main.0c553b63.js"
   ]
 }
