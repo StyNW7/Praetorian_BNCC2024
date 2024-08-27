@@ -17,6 +17,7 @@ function App() {
       <ScrollToTop />
       <Navbar />
       <Routes>
+        <Route path="/Praetorian_BNCC2024" element={<Home />} />
         <Route path="/" element={<Home />} />
         <Route path="/search" element={<CountrySearch />} />
         <Route path="/country/:name" element={<CountryDetail />} />
