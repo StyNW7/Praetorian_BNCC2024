@@ -53,7 +53,7 @@ const CountryFilter = () => {
   }
 
   return (
-    <div className="container mx-auto p-4 pb-20">
+    <div className="container mx-auto p-4 pb-20 min-h-screen">
       <div className="mb-4">
         <div className="mb-4">
           <select
@@ -88,6 +88,10 @@ const CountryFilter = () => {
         </div>
       </div>
 
+      {filteredCountries.length === 0 ? (
+        <p className="text-center text-lg text-red-500">No countries found matching your query.</p>
+      ) : (
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {filteredCountries.map(country => (
           <div key={country.cca3} className="border border-gray-300 rounded-lg overflow-hidden shadow-lg">
@@ -103,7 +107,11 @@ const CountryFilter = () => {
           </div>
         ))}
       </div>
+
+      )}
+
     </div>
+    
   );
 };
 
